@@ -1,0 +1,2 @@
+include sxtlac/data/NIST_atomic_weights.txt
+include sxtlac/data/sf.tar.gz
