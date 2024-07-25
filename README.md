@@ -5,15 +5,11 @@ Implementation of calculating linear attenuation coefficients based on the tabul
 
 The linear absorption coefficient is calculated based on pure photoabsorption, such that [1]
 
-$
-\sigma_a = 2 r_e \lambda f_2.
-$
+$$\sigma_a = 2 r_e \lambda f_2.$$
 
 The compound (mass) absorption coefficients are calculated by 
 
-$
-\mu = \frac{N_A}{MW}\Sigma x_i\sigma_{ai}.
-$
+$$\mu = \frac{N_A}{MW}\Sigma x_i\sigma_{ai}.$$
 
 Data source:
 Atomic Scattering factors taken from [CRXO](https://henke.lbl.gov/optical_constants/asf.html) [2] .

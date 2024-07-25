@@ -18,8 +18,10 @@ setup(
     author = 'Axel Ekman',  
     author_email = 'axel.ekman@iki.fi',
     url = '',
-    description = 'A simple example python package.',
+    description = 'Linear attenuation coefficients based on the tabulated values of CXRO',
     long_description = long_description,
+    packages=['sxtlac'],
+    include_package_data=True,
     license = "MIT license",
     classifiers=[
         "Programming Language :: Python :: 3",
