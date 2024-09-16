@@ -1,2 +1,2 @@
 
-from .lac import LAC
+from .lac import LAC, LAC_mixture
