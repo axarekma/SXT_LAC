@@ -3,13 +3,16 @@ from io import StringIO, BytesIO
 from tarfile import TarFile
 import pkgutil
 import re
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 import numpy as np
 
 from . import constants as CONST
 
 def read_atomic_mass(element):
-    print('Reading atomic mass for ',element)    
+    logging.info('Reading atomic mass for %s', element)    
     find_string = f"Atomic Symbol = {element}"
     data = pkgutil.get_data(__name__, "data/NIST_atomic_weights.txt").decode()
 
@@ -18,10 +21,10 @@ def read_atomic_mass(element):
         index = next((i, el) for i, el in enumerate(lines) if el.strip() == find_string)[0]
         return float(re.findall("\d+\.\d+", lines[index+2])[0])
     except StopIteration:
-        print('Element not found!')
+        logging.error('Element not found!')
 
 def absorption_cross_section(element):
-    print('Reading absorption cross section for ',element)    
+    logging.info('Reading absorption cross section for %s', element)    
     nff_name = f"{element.lower()}.nff"
     data = pkgutil.get_data(__name__, f"data/sf.tar.gz")  
     with TarFile.open(fileobj=BytesIO(data)) as tf:
